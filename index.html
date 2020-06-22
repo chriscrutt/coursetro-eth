@@ -42,6 +42,7 @@
                     try {
                         // Request account access if needed
                         await ethereum.enable();
+                        console.log("new browser")
                         // Acccounts now exposed
                     } catch (error) {
                         // User denied account access...
@@ -50,6 +51,7 @@
                 // Legacy dapp browsers...
                 else if (window.web3) {
                     window.web3 = new Web3(web3.currentProvider);
+                    console.log("old browser")
                     // Acccounts always exposed
                 }
                 // Non-dapp browsers...
