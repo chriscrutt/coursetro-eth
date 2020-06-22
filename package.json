@@ -1,0 +1,22 @@
+{
+  "name": "coursetro-eth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriscrutt/coursetro-eth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chriscrutt/coursetro-eth/issues"
+  },
+  "homepage": "https://github.com/chriscrutt/coursetro-eth#readme",
+  "dependencies": {
+    "web3": "^1.2.9"
+  }
+}
