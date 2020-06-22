@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="web3.min.js"></script>
 
 </head>
 
@@ -82,6 +82,7 @@
         console.log(icoContract);
 
         $('#button').click(function () {
+            console.log("button pressed")
             // icoContract.methods.buyStock().send({from: web3.eth.accounts[0], value: $(".ether").val() * 10 ** 18 })
             console.log(icoContract.cash().call())
         });
