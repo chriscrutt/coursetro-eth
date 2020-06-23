@@ -34,6 +34,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
+
+        var myEther;
+
         console.log("Web3.version", Web3.version)
         console.log("web3.version", web3.version)
         window.addEventListener('load', async () => {
@@ -65,9 +68,11 @@
             $(".ether").change(function () {
                 $(".token").val(Math.round($(".ether").val() * 625));
                 $(".ether").val($(".token").val() / 625);
+                myEther = $(".ether").val();
             });
             $(".token").change(function () {
                 $(".ether").val($(".token").val() / 625);
+                myEther = $(".ether").val();
             });
         });
 
@@ -82,7 +87,7 @@
 
             icoContract.buyStock.sendTransaction({
                 from: web3.eth.accounts[0],
-                value: web3.utils.toWei($(".ether").val(), 'ether'),
+                value: myEther * 10 ** 18,
             }, function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     console.log("result", result);
