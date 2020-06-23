@@ -29,7 +29,7 @@
         <h1>Check Token Balance!</h1>
         <button id="balance">check balance</button>
 
-        <label id="tokens" class="col-lg-2 control-label">Amount in Token</label>
+        <label id="tokens" class="col-lg-2 control-label"></label>
 
 
 
@@ -113,7 +113,7 @@
             }, function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     console.log("result", result);
-                    $(".tokens").val(result.c[0]);
+                    $(".tokens").text(result.c[0]);
                 } else {
                     console.log("error", error);
                 }
