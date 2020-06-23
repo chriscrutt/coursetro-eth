@@ -113,7 +113,7 @@
             }, function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     console.log("result", result);
-                    $(".tokens").text(result.c[0]);
+                    document.getElementById("tokens").innerHTML = result.c[0]
                 } else {
                     console.log("error", error);
                 }
