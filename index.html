@@ -91,10 +91,8 @@
             async function getAccount() {
                 const accounts = await ethereum.enable();
                 const account = accounts[0];
-                console.log(icoContract.cash().call({ from: account }));
+                console.log(icoContract.cash.call({ from: account }));
             }
-
-
 
     </script>
 
