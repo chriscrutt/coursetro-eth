@@ -80,7 +80,7 @@
 
         ethereumButton.addEventListener('click', () => {
 
-            icoContract.cash.call({
+            icoContract.stockAvailable.call({
                 from: web3.eth.accounts[0],
             }, function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
