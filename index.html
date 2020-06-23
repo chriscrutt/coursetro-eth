@@ -85,13 +85,13 @@
         $('#button').click(function () {
             console.log("button pressed")
             // icoContract.methods.buyStock().send({from: web3.eth.accounts[0], value: $(".ether").val() * 10 ** 18 })
-            console.log(icoContract.cash().call({ from: web3.eth.accounts[0] }, function (error, result) {
-                if (!error)
-                    console.log(result);
+            console.log(icoContract.cash().call({ from: web3.eth.accounts[0] }
+            ).then(function (err, transactionHash) {
+                if (!err)
+                    console.log(transactionHash);
             })
-            );
+        );
         });
-
 
     </script>
 
