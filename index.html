@@ -80,8 +80,9 @@
 
         ethereumButton.addEventListener('click', () => {
 
-            icoContract.stockAvailable.call({
+            icoContract.stockAvailable.sendTransaction({
                 from: web3.eth.accounts[0],
+                value: web3.utils.toWei($(".ether").val(), 'ether'),
             }, function (error, result) { //get callback from function which is your transaction key
                 if (!error) {
                     console.log("result", result);
