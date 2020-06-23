@@ -85,14 +85,19 @@
         const ethereumButton = document.getElementById('button');
 
         ethereumButton.addEventListener('click', () => {
-                getAccount();
+
+            icoContract.cash.sendTransaction({
+                from: web3.eth.accounts[0],
+            }, function (error, result) { //get callback from function which is your transaction key
+                if (!error) {
+                    console.log(result);
+                } else {
+                    console.log(error);
+                }
             });
 
-            async function getAccount() {
-                const accounts = await ethereum.enable();
-                const account = accounts[0];
-                console.log(icoContract.cash.call({ from: account }));
-            }
+        });
+
 
     </script>
 
