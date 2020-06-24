@@ -194,8 +194,8 @@ console.log("icoContract", icoContract);
 
 const buyButton = $(".buy");
 
-buyButton.click(function() {
-
+buyButton.click(function () {
+    console.log("click")
     icoContract.buyStock.sendTransaction({
         from: web3.eth.accounts[0],
         value: myEther * 10 ** 18,
@@ -212,7 +212,8 @@ buyButton.click(function() {
 
 const balanceButton = $('.balance');
 
-balanceButton.click(function() {
+balanceButton.click(function () {
+    console.log("click")
 
     icoContract.getHolding.call(web3.eth.accounts[0], {
         from: web3.eth.accounts[0],
