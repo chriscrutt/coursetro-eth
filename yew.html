@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<button class="enableEthereumButton">Enable Ethereum</button>
+<h2>Account: <span class="showAccount"></span></h2>
+
+<script>
+    const ethereumButton = document.querySelector('.enableEthereumButton');
+        const showAccount = document.querySelector('.showAccount');
+
+        ethereumButton.addEventListener('click', () => {
+            getAccount();
+        });
+
+        async function getAccount() {
+            const accounts = await ethereum.enable();
+            const account = accounts[0];
+            console.log(icoContract.cash().call({ from: account}));
+        }
+
+
+</script>
+</html>
