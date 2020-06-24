@@ -194,7 +194,7 @@ console.log("icoContract", icoContract);*/
 
 const buyButton = $(".buy");
 
-buyButton.click(), () => {
+buyButton.click( () => {
 
     icoContract.buyStock.sendTransaction({
         from: web3.eth.accounts[0],
@@ -208,11 +208,11 @@ buyButton.click(), () => {
         }
     });
 
-};
+});
 
 const balanceButton = $('.balance');
 
-balanceButton.click(), () => {
+balanceButton.click( () => {
 
     icoContract.getHolding.call(web3.eth.accounts[0], {
         from: web3.eth.accounts[0],
@@ -225,4 +225,4 @@ balanceButton.click(), () => {
         }
     });
 
-};
+});
