@@ -55,19 +55,7 @@
         //             // Acccounts now exposed
         //         } catch (error) {
         //             // User denied account access...
-        //         }
-        //     }
-        //     // Legacy dapp browsers...
-        //     else if (window.web3) {
-        //         // window.web3 = new Web3(web3.currentProvider);
-        //         console.log("old browser")
-        //         // Acccounts always exposed
-        //     }
-        //     // Non-dapp browsers...
-        //     else {
-        //         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
-        //     }
-        // });
+
 
         $(document).ready(function () {
             $(".ether").change(function () {
@@ -89,7 +77,7 @@
         const buyButton = document.getElementById('buy');
 
         buyButton.addEventListener('click', () => {
-            await ethereum.enable();
+            try {await ethereum.enable();} catch (error) {console.log(error)}
             icoContract.buyStock.sendTransaction({
                 from: web3.eth.accounts[0],
                 value: myEther * 10 ** 18,
@@ -107,7 +95,7 @@
         const balanceButton = document.getElementById('balance');
 
         balanceButton.addEventListener('click', () => {
-            await ethereum.enable();
+            try {await ethereum.enable();} catch (error) {console.log(error)}
             icoContract.getHolding.call(web3.eth.accounts[0], {
                 from: web3.eth.accounts[0],
             }, function (error, result) { //get callback from function which is your transaction key
