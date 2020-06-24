@@ -44,6 +44,31 @@
 
         console.log("web3.version", web3.version)
 
+        // window.addEventListener('load', async () => {
+        //     // Modern dapp browsers...
+        //     if (window.ethereum) {
+        //         // window.web3 = new Web3(ethereum);
+        //         try {
+        //             // Request account access if needed
+        //             await ethereum.enable();
+        //             console.log("new browser")
+        //             // Acccounts now exposed
+        //         } catch (error) {
+        //             // User denied account access...
+        //         }
+        //     }
+        //     // Legacy dapp browsers...
+        //     else if (window.web3) {
+        //         // window.web3 = new Web3(web3.currentProvider);
+        //         console.log("old browser")
+        //         // Acccounts always exposed
+        //     }
+        //     // Non-dapp browsers...
+        //     else {
+        //         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+        //     }
+        // });
+
         $(document).ready(function () {
             $(".ether").change(function () {
                 $(".token").val(Math.round($(".ether").val() * 625));
@@ -64,7 +89,7 @@
         const buyButton = document.getElementById('buy');
 
         buyButton.addEventListener('click', () => {
-
+            await ethereum.enable();
             icoContract.buyStock.sendTransaction({
                 from: web3.eth.accounts[0],
                 value: myEther * 10 ** 18,
@@ -82,7 +107,7 @@
         const balanceButton = document.getElementById('balance');
 
         balanceButton.addEventListener('click', () => {
-
+            await ethereum.enable();
             icoContract.getHolding.call(web3.eth.accounts[0], {
                 from: web3.eth.accounts[0],
             }, function (error, result) { //get callback from function which is your transaction key
