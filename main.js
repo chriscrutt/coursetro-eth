@@ -21,7 +21,7 @@ try {
     $('.mask').show();
 }
 
-/*var icoContract = web3.eth.contract([{
+var icoContract = web3.eth.contract([{
     "name": "Buy",
     "inputs": [{
         "type": "address",
@@ -189,8 +189,8 @@ try {
     "payable": false,
     "type": "function",
     "gas": 1541
-// }]).at('0x7b3b1049ff4171fe069c0e28a04d8db7e7a9fd37');
-console.log("icoContract", icoContract);*/
+}]).at('0x7b3b1049ff4171fe069c0e28a04d8db7e7a9fd37');
+console.log("icoContract", icoContract);
 
 const buyButton = $(".buy");
 
